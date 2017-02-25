@@ -1,0 +1,24 @@
+ext.compileSdkVersion = COMPILE_SDK_VERSION.toInteger()
+ext.targetSdkVersion = TARGET_SDK_VERSION.toInteger()
+ext.minSdkVersion = MIN_SDK_VERSION.toInteger()
+ext.buildToolsVersion = BUILD_TOOLS_VERSION
+ext.buildTime = new java.text.SimpleDateFormat("yyyyMMdd_HHmm").format(new Date())
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath ANDROID_PLUGIN
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
